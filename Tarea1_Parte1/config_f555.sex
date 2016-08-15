@@ -8,20 +8,20 @@ PARAMETERS_NAME  default.param  # name of the file containing catalog contents
 #------------------------------- Extraction ----------------------------------
  
 DETECT_TYPE      CCD            # CCD (linear) or PHOTO (with gamma correction)
-DETECT_MINAREA   12              # min. # of pixels above threshold
+DETECT_MINAREA   7              # min. # of pixels above threshold
 
-THRESH_TYPE	RELATIVE
-DETECT_THRESH    1.5            # <sigmas> or <threshold>,<ZP> in mag.arcsec-2
-ANALYSIS_THRESH  1.5            # <sigmas> or <threshold>,<ZP> in mag.arcsec-2
+THRESH_TYPE	 RELATIVE
+DETECT_THRESH    1            # <sigmas> or <threshold>,<ZP> in mag.arcsec-2
+#ANALYSIS_THRESH  1.5            # <sigmas> or <threshold>,<ZP> in mag.arcsec-2
  
 FILTER           N              # apply filter for detection (Y or N)?
 FILTER_NAME      default.conv   # name of the file containing the filter
  
-DEBLEND_NTHRESH  32             # Number of deblending sub-thresholds
-DEBLEND_MINCONT  0.005          # Minimum contrast parameter for deblending
+DEBLEND_NTHRESH  16             # Number of deblending sub-thresholds
+DEBLEND_MINCONT  0.000005          # Minimum contrast parameter for deblending
  
 CLEAN            Y              # Clean spurious detections? (Y or N)?
-CLEAN_PARAM      1.0            # Cleaning efficiency
+CLEAN_PARAM      5.0            # Cleaning efficiency
  
 #-------------------------------- WEIGHTing ----------------------------------
 
@@ -47,7 +47,7 @@ PHOT_APERTURES   6.0              # MAG_APER aperture diameter(s) in pixels
 SATUR_LEVEL      50000.0        # level (in ADUs) at which arises saturation
 SATUR_KEY        SATURATE       # keyword for saturation level (in ADUs)
  
-MAG_ZEROPOINT    25            # magnitude zero-point
+MAG_ZEROPOINT    25.255            # magnitude zero-point
 MAG_GAMMA        4.0            # gamma of emulsion (for photographic scans)
 GAIN             2            # detector gain in e-/ADU
 GAIN_KEY         GAIN           # keyword for detector gain in e-/ADU
@@ -62,7 +62,7 @@ STARNNW_NAME     default.nnw    # Neural-Network_Weight table filename
  
 BACK_TYPE        AUTO           # AUTO or MANUAL
 BACK_VALUE       0.0            # Default background value in MANUAL mode
-BACK_SIZE        64             # Background mesh: <size> or <width>,<height>
+BACK_SIZE        96            # Background mesh: <size> or <width>,<height>
 BACK_FILTERSIZE  3              # Background filter: <size> or <width>,<height>
  
 #------------------------------ Check Image ----------------------------------
@@ -76,7 +76,7 @@ CHECKIMAGE_NAME  check.fits     # Filename for the check-image
 #--------------------- Memory (change with caution!) -------------------------
  
 MEMORY_OBJSTACK  3000           # number of objects in stack
-MEMORY_PIXSTACK  300000         # number of pixels in stack
+MEMORY_PIXSTACK  30000000         # number of pixels in stack  x100
 MEMORY_BUFSIZE   1024           # number of lines in buffer
  
 #------------------------------- ASSOCiation ---------------------------------
