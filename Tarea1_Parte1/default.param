@@ -1,0 +1,7 @@
+NUMBER                   Running object number                                    
+FLUX_APER 1              #Flux vector within fixed circular aperture(s)             [count]
+FLUXERR_APER 1           #RMS error vector for aperture flux(es)                    [count]
+MAG_APER                 #Fixed aperture magnitude vector                           [mag]
+MAGERR_APER              #RMS error vector for fixed aperture mag.                  [mag]
+ALPHA_J2000              #Right ascension of barycenter (J2000)                     [deg]
+DELTA_J2000              #Declination of barycenter (J2000)                         [deg]
